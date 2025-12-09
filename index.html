@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SSGorgenburger's Tacos</title>
+  <link rel="stylesheet" href="SSGOBE.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>SSGorgenburger's Tacos</h1>
+      <p class="tagline">Cook-Your-Own Taco Experience</p>
+      <p class="sub-tagline">Pick your shell, sizzle your filling, and stack your toppings.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Signature Taco Menu -->
+    <section class="section">
+      <h2>Signature Tacos</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>The SSG Classic</h3>
+          <p>Soft flour tortilla, grilled beef, cheddar, lettuce, pico de gallo, house sauce.</p>
+          <p class="price">$4.50</p>
+        </article>
+
+        <article class="card">
+          <h3>Gorgenburger Crunch</h3>
+          <p>Crunchy shell, spicy beef, nacho cheese, shredded lettuce, jalapeños.</p>
+          <p class="price">$4.75</p>
+        </article>
+
+        <article class="card">
+          <h3>Veggie Vibes</h3>
+          <p>Soft corn tortilla, grilled veggies, black beans, cotija cheese, salsa verde.</p>
+          <p class="price">$4.25</p>
+        </article>
+
+        <article class="card">
+          <h3>Sunset Chicken</h3>
+          <p>Soft flour tortilla, citrus chicken, cabbage, mango salsa, chipotle crema.</p>
+          <p class="price">$4.95</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Build Your Own Taco -->
+    <section class="section build-your-own">
+      <h2>Build Your Own Taco</h2>
+      <p class="section-desc">
+        Choose your shell, protein, and toppings. Price updates automatically.
+      </p>
+
+      <div class="build-grid">
+        <!-- Shells -->
+        <div class="build-column">
+          <h3>1. Shell</h3>
+          <p class="hint">Choose one</p>
+          <label>
+            <input type="radio" name="shell" value="Flour Tortilla" data-price="1.50" checked />
+            Flour Tortilla — $1.50
+          </label>
+          <label>
+            <input type="radio" name="shell" value="Corn Tortilla" data-price="1.25" />
+            Corn Tortilla — $1.25
+          </label>
+          <label>
+            <input type="radio" name="shell" value="Crunchy Shell" data-price="1.75" />
+            Crunchy Shell — $1.75
+          </label>
+          <label>
+            <input type="radio" name="shell" value="Lettuce Wrap" data-price="1.40" />
+            Lettuce Wrap — $1.40
+          </label>
+        </div>
+
+        <!-- Proteins -->
+        <div class="build-column">
+          <h3>2. Protein</h3>
+          <p class="hint">Choose one</p>
+          <label>
+            <input type="radio" name="protein" value="Grilled Chicken" data-price="2.25" checked />
+            Grilled Chicken — $2.25
+          </label>
+          <label>
+            <input type="radio" name="protein" value="Seasoned Beef" data-price="2.50" />
+            Seasoned Beef — $2.50
+          </label>
+          <label>
+            <input type="radio" name="protein" value="Carnitas (Pork)" data-price="2.65" />
+            Carnitas (Pork) — $2.65
+          </label>
+          <label>
+            <input type="radio" name="protein" value="Grilled Veggies" data-price="2.00" />
+            Grilled Veggies — $2.00
+          </label>
+          <label>
+            <input type="radio" name="protein" value="Black Beans" data-price="1.80" />
+            Black Beans — $1.80
+          </label>
+        </div>
+
+        <!-- Toppings -->
+        <div class="build-column">
+          <h3>3. Toppings</h3>
+          <p class="hint">Choose as many as you like</p>
+          <label>
+            <input type="checkbox" class="topping" value="Cheddar Cheese" data-price="0.40" checked />
+            Cheddar Cheese — $0.40
+          </label>
+          <label>
+            <input type="checkbox" class="topping" value="Lettuce" data-price="0.25" />
+            Lettuce — $0.25
+          </label>
+          <label>
+            <input type="checkbox" class="topping" value="Pico de Gallo" data-price="0.35" />
+            Pico de Gallo — $0.35
+          </label>
+          <label>
+            <input type="checkbox" class="topping" value="Guacamole" data-price="0.85" />
+            Guacamole — $0.85
+          </label>
+          <label>
+            <input type="checkbox" class="topping" value="Sour Cream" data-price="0.35" />
+            Sour Cream — $0.35
+          </label>
+          <label>
+            <input type="checkbox" class="topping" value="Jalapeños" data-price="0.30" />
+            Jalapeños — $0.30
+          </label>
+          <label>
+            <input type="checkbox" class="topping" value="Onions" data-price="0.20" />
+            Onions — $0.20
+          </label>
+          <label>
+            <input type="checkbox" class="topping" value="Cilantro" data-price="0.20" />
+            Cilantro — $0.20
+          </label>
+          <label>
+            <input type="checkbox" class="topping" value="Extra Cheese" data-price="0.50" />
+            Extra Cheese — $0.50
+          </label>
+        </div>
+
+        <!-- Summary -->
+        <div class="build-summary">
+          <h3>Your Taco</h3>
+          <p><strong>Shell:</strong> <span id="summary-shell">Flour Tortilla</span></p>
+          <p><strong>Protein:</strong> <span id="summary-protein">Grilled Chicken</span></p>
+          <p><strong>Toppings:</strong> <span id="summary-toppings">Cheddar Cheese</span></p>
+          <p class="total-label">Total Price:</p>
+          <p id="total-price" class="total-price">$4.15</p>
+          <button id="reset-btn" class="btn-ghost">Reset Choices</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sides & Drinks -->
+    <section class="section">
+      <h2>Sides & Drinks</h2>
+      <div class="card-grid small">
+        <article class="card">
+          <h3>Sides</h3>
+          <ul class="item-list">
+            <li>Chips & Salsa — $2.50</li>
+            <li>Chips & Queso — $3.25</li>
+            <li>Street Corn Cup — $3.75</li>
+            <li>Black Beans & Rice — $3.50</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Drinks</h3>
+          <ul class="item-list">
+            <li>Fountain Drink — $2.00</li>
+            <li>Horchata — $2.75</li>
+            <li>Lime Agua Fresca — $2.50</li>
+            <li>Bottled Water — $1.50</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Extras</h3>
+          <ul class="item-list">
+            <li>Extra Guac — $1.25</li>
+            <li>Extra Salsa — $0.75</li>
+            <li>Side of Queso — $1.75</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 SSGorgenburger's Tacos — Cook your own, your way.</p>
+  </footer>
+
+  <script src="SSGOBE.js"></script>
+</body>
+</html>
 
